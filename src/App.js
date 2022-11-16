@@ -1,11 +1,10 @@
 import './App.css';
 
+import Welcome from './components/welcome/welcome';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hi.</h1>
-      <h1>Welcome to simple CV creator</h1>
-    </div>
+    <Welcome/>
   );
 }
 
