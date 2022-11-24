@@ -24,4 +24,4 @@ function welcome() {
   )
 }
 
-export default welcome
+export default welcome;
