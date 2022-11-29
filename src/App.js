@@ -25,8 +25,6 @@ function App() {
     }, []);
   return (
     <div>
-      <Welcome/>
-      <h1>hello</h1>
       <Particles
             id="tsparticles"
             init={particlesInit}
@@ -34,7 +32,7 @@ function App() {
             options={{
                 background: {
                     color: {
-                        value: "#000000",
+                        value: "#ffffff",
                     },
                 },
                 fpsLimit: 120,
@@ -62,10 +60,10 @@ function App() {
                 },
                 particles: {
                     color: {
-                        value: "#ffffff",
+                        value: "#000000",
                     },
                     links: {
-                        color: "#ffffff",
+                        color: "#000000",
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
@@ -81,7 +79,7 @@ function App() {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 6,
+                        speed: 1,
                         straight: false,
                     },
                     number: {
@@ -104,6 +102,7 @@ function App() {
                 detectRetina: true,
             }}
       />
+      <Welcome/>
     </div>
   );
 }
