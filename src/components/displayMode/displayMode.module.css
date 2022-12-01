@@ -1,0 +1,7 @@
+.displayModeContainer{
+    position: absolute;  
+    background-color: white;
+    top: 0px;
+    right: 0px;
+    margin: 1rem;
+}
