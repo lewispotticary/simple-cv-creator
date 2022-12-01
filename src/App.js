@@ -8,6 +8,8 @@ import './App.css';
 
 import Welcome from './components/welcome/welcome';
 
+import DisplayMode from "./components/displayMode/displayMode";
+
 function App() {
 
     //Particle background
@@ -103,6 +105,7 @@ function App() {
             }}
       />
       <Welcome/>
+      <DisplayMode/>
     </div>
   );
 }
