@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 
 import styles from './displayMode.module.css';
 
-function displayMode() {
+function displayMode({displayMode, setDisplayMode}) {
 
     const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         width: 62,
@@ -54,13 +54,23 @@ function displayMode() {
           borderRadius: 20 / 2,
         },
       }));
-      
 
+      const displayModeHandler = () => {
+        switch(displayMode.mode) {
+            case "Light Mode":
+                console.log("Light Mode")
+                setDisplayMode({mode: "Dark Mode", backgroundColour: "white", fontColour: "white", particleColour: "green"})
+              break;
+            case "Dark Mode":
+              console.log("Dark Mode")
+              setDisplayMode({mode: "Light Mode", backgroundColour: "white", fontColour: "white", particleColour: "green"})
+              break;
+          }
+      }
+      
   return (
     <div className={styles.displayModeContainer}>
-        <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        />
+        <FormControlLabel control={<Switch defaultChecked color="default"/>} onChange={displayModeHandler} label={displayMode.mode}/>
     </div>
   )
 }
