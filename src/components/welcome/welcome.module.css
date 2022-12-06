@@ -1,14 +1,13 @@
 .welcomeContainer{
-    display: flex;
-    flex-direction: column;
-    margin-left: 15%;
-    margin-top: 10%;
-    width: 75%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
 .startContainer{
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 2rem;
 }
