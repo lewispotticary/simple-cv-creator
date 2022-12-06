@@ -59,17 +59,17 @@ function displayMode({displayMode, setDisplayMode}) {
         switch(displayMode.mode) {
             case "Light Mode":
                 console.log("Light Mode")
-                setDisplayMode({mode: "Dark Mode", backgroundColour: "white", fontColour: "white", particleColour: "green"})
+                setDisplayMode({mode: "Dark Mode", backgroundColour: "ffffff", fontColour: "000000", particleColour: "000000"})
               break;
             case "Dark Mode":
               console.log("Dark Mode")
-              setDisplayMode({mode: "Light Mode", backgroundColour: "white", fontColour: "white", particleColour: "green"})
+              setDisplayMode({mode: "Light Mode", backgroundColour: "000000", fontColour: "ffffff", particleColour: "ffffff"})
               break;
           }
       }
       
   return (
-    <div className={styles.displayModeContainer}>
+    <div style={{backgroundColor: String(displayMode.backgroundColor), color: displayMode.fontColour}} className={styles.displayModeContainer}>
         <FormControlLabel control={<Switch defaultChecked color="default"/>} onChange={displayModeHandler} label={displayMode.mode}/>
     </div>
   )

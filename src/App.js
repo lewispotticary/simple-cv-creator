@@ -1,4 +1,4 @@
-import { React, useCallback } from "react";
+import { React, useCallback, useState } from "react";
 
 import Particles from "react-particles";
 
@@ -11,6 +11,8 @@ import Welcome from './components/welcome/welcome';
 import DisplayMode from "./components/displayMode/displayMode";
 
 function App() {
+
+  const [displayMode, setDisplayMode] = useState({mode: "Dark Mode", backgroundColour: "ffffff", fontColour: "000000", particleColour: "000000"});
 
     //Particle background
     const particlesInit = useCallback(async engine => {
@@ -34,7 +36,7 @@ function App() {
             options={{
                 background: {
                     color: {
-                        value: "#ffffff",
+                        value: displayMode.backgroundColour,
                     },
                 },
                 fpsLimit: 120,
@@ -62,10 +64,10 @@ function App() {
                 },
                 particles: {
                     color: {
-                        value: "#000000",
+                        value: displayMode.particleColour,
                     },
                     links: {
-                        color: "#000000",
+                        color: displayMode.particleColour,
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
@@ -104,8 +106,8 @@ function App() {
                 detectRetina: true,
             }}
       />
-      <Welcome/>
-      <DisplayMode/>
+      <DisplayMode displayMode={displayMode} setDisplayMode={setDisplayMode}/>
+      <Welcome displayMode={displayMode}/>
     </div>
   );
 }
