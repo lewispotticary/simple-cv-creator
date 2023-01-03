@@ -12,6 +12,8 @@ import DisplayMode from "./components/displayMode/displayMode";
 
 import Profile from "./components/profile/profile";
 
+import Employment from "./components/employment/employment";
+
 function App() {
 
   const [displayMode, setDisplayMode] = useState({mode: "Dark Mode", backgroundColour: "ffffff", fontColour: "000000", particleColour: "000000"});
@@ -110,7 +112,8 @@ function App() {
       />
       <DisplayMode displayMode={displayMode} setDisplayMode={setDisplayMode}/>
       <Welcome displayMode={displayMode}/>
-      <Profile/>
+      <Employment/>
+      <Profile/>    
     </div>
   );
 }
