@@ -40,16 +40,18 @@ function Profile() {
           m: 1,
           bgcolor: 'background.paper',
           borderRadius: 1,
+          margin: 0,
+          marginBottom: 1,
         }}
       >
-        <h1>Profile</h1>
-        <InfoIcon
-            aria-owns={open ? 'mouse-over-popover' : undefined}
-            aria-haspopup="true"
-            onMouseEnter={handlePopoverOpen}
-            onMouseLeave={handlePopoverClose}
-          >
-          </InfoIcon>
+          <Typography fontFamily={'Courier New'} variant='h4' sx={{ mr: 2 }}>Profile</Typography>
+          <InfoIcon
+              aria-owns={open ? 'mouse-over-popover' : undefined}
+              aria-haspopup="true"
+              onMouseEnter={handlePopoverOpen}
+              onMouseLeave={handlePopoverClose}
+            >
+            </InfoIcon>
       </Box>
         
           
@@ -63,8 +65,8 @@ function Profile() {
         open={open}
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: 'center',
+          horizontal: 'right',
         }}
         transformOrigin={{
           vertical: 'top',
@@ -75,9 +77,21 @@ function Profile() {
       >
         <Typography sx={{ p: 1 }}>I use Popover.</Typography>
       </Popover>
-        <Card sx={{ minWidth: 275 }}>
+        <Card sx={{ minWidth: 275, height: 500}}>
             <CardContent>
-            <TextField id="outlined-basic" label="Profile" variant="outlined" />
+            <TextField
+            id="outlined-basic" 
+            label="Profile" 
+            variant="outlined"
+            multiline
+            fullWidth
+            inputProps={{
+            style: {
+              height: "435px",
+            },
+        }}
+  />
+            
             </CardContent>
         </Card>
     </div>
