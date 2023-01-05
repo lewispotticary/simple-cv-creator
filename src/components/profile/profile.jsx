@@ -14,8 +14,9 @@ import Popover from '@mui/material/Popover';
 
 import InfoIcon from '@mui/icons-material/Info';
 
-function Profile() {
+import { alpha, styled } from '@mui/material/styles';
 
+function Profile({displayMode}) {
 
     const [anchorEl, setAnchorEl] = React.useState(null);
   
@@ -29,10 +30,25 @@ function Profile() {
   
     const open = Boolean(anchorEl);
 
+    const ValidationTextField = styled(TextField)({
+      '& input:valid + fieldset': {
+        borderColor: 'white',
+        borderWidth: 2,
+      },
+      '& input:invalid + fieldset': {
+        borderColor: 'white',
+        borderWidth: 2,
+      },
+      '& input:valid:focus + fieldset': {
+        borderLeftWidth: 6,
+        padding: '4px !important', // override inline-style
+        borderColor: 'white',
+      },
+    });
+
   return (
     <div className={styles.profileContainer} id="Profile">
-      <Box
-        sx={{
+      <Card sx={{
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
@@ -42,8 +58,9 @@ function Profile() {
           borderRadius: 1,
           margin: 0,
           marginBottom: 1,
-        }}
-      >
+          backgroundColor: "#" + displayMode.backgroundColour,
+          color: "#" + displayMode.fontColour,
+        }}>
           <Typography fontFamily={'Courier New'} variant='h4' sx={{ mr: 2 }}>Profile</Typography>
           <InfoIcon
               aria-owns={open ? 'mouse-over-popover' : undefined}
@@ -52,10 +69,9 @@ function Profile() {
               onMouseLeave={handlePopoverClose}
             >
             </InfoIcon>
-      </Box>
-        
-          
-        
+    
+
+      </Card>
         
       <Popover
         id="mouse-over-popover"
@@ -75,9 +91,9 @@ function Profile() {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography sx={{ p: 1 }}>I use Popover.</Typography>
+          <Typography sx={{ p: 1 }}>I use Popover.</Typography>
       </Popover>
-        <Card sx={{ minWidth: 275, height: 500}}>
+        <Card sx={{ minWidth: 275, height: 500, backgroundColor: "#" + displayMode.backgroundColour, color: "#" + displayMode.fontColour}}>
             <CardContent>
             <TextField
             id="outlined-basic" 
@@ -88,6 +104,8 @@ function Profile() {
             inputProps={{
             style: {
               height: "435px",
+              color: 'white',
+              borderColor: 'white',
             },
         }}
   />
