@@ -2,6 +2,8 @@ import React from 'react'
 
 import styles from './profile.module.css';
 
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -30,25 +32,9 @@ function Profile({displayMode}) {
   
     const open = Boolean(anchorEl);
 
-    const ValidationTextField = styled(TextField)({
-      '& input:valid + fieldset': {
-        borderColor: 'white',
-        borderWidth: 2,
-      },
-      '& input:invalid + fieldset': {
-        borderColor: 'white',
-        borderWidth: 2,
-      },
-      '& input:valid:focus + fieldset': {
-        borderLeftWidth: 6,
-        padding: '4px !important', // override inline-style
-        borderColor: 'white',
-      },
-    });
-
   return (
     <div className={styles.profileContainer} id="Profile">
-      <Card sx={{
+      <Card style={{ border: "1px solid" + "#" + displayMode.fontColour }} sx={{
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
@@ -57,7 +43,7 @@ function Profile({displayMode}) {
           bgcolor: 'background.paper',
           borderRadius: 1,
           margin: 0,
-          marginBottom: 1,
+          marginBottom: 2,
           backgroundColor: "#" + displayMode.backgroundColour,
           color: "#" + displayMode.fontColour,
         }}>
@@ -69,8 +55,6 @@ function Profile({displayMode}) {
               onMouseLeave={handlePopoverClose}
             >
             </InfoIcon>
-    
-
       </Card>
         
       <Popover
@@ -93,25 +77,28 @@ function Profile({displayMode}) {
       >
           <Typography sx={{ p: 1 }}>I use Popover.</Typography>
       </Popover>
-        <Card sx={{ minWidth: 275, height: 500, backgroundColor: "#" + displayMode.backgroundColour, color: "#" + displayMode.fontColour}}>
-            <CardContent>
-            <TextField
+      <div className={styles.inputContainer}>
+        <div className={styles.textFieldContainer}>
+          <TextField
+            sx={{backgroundColor: "#" + displayMode.backgroundColour}}
+            inputRef={input => input && input.focus()}
             id="outlined-basic" 
             label="Profile" 
-            variant="outlined"
+            variant="filled" 
             multiline
             fullWidth
             inputProps={{
             style: {
-              height: "435px",
-              color: 'white',
-              borderColor: 'white',
+              height: "436px",
+              color: "#" + displayMode.fontColour,
+              border: 'white',
+              padding: '5px',
             },
-        }}
-  />
-            
-            </CardContent>
-        </Card>
+            }}
+          /> 
+        </div>
+        <Button style={{marginTop: '25px'}} variant="contained">Next</Button>
+      </div>  
     </div>
   )
 }
