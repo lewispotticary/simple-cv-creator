@@ -112,8 +112,8 @@ function App() {
       />
       <DisplayMode displayMode={displayMode} setDisplayMode={setDisplayMode}/>
       <Welcome displayMode={displayMode}/>
-      <Employment/>
-      <Profile/>    
+      <Profile displayMode={displayMode}/> 
+      <Employment displayMode={displayMode}/>   
     </div>
   );
 }
