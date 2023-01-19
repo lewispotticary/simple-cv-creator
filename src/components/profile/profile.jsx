@@ -2,21 +2,13 @@ import React from 'react'
 
 import styles from './profile.module.css';
 
-import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
-
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { TextField } from '@mui/material';
 import Popover from '@mui/material/Popover';
 
 import InfoIcon from '@mui/icons-material/Info';
-
-import { alpha, styled } from '@mui/material/styles';
 
 function Profile({displayMode}) {
 
@@ -47,7 +39,7 @@ function Profile({displayMode}) {
           backgroundColor: "#" + displayMode.backgroundColour,
           color: "#" + displayMode.fontColour,
         }}>
-          <Typography fontFamily={'Courier New'} variant='h4' sx={{ mr: 2 }}>Profile</Typography>
+          <Typography fontFamily={'Courier New'} variant='h4' sx={{ mr: 2 }}>1. Profile</Typography>
           <InfoIcon
               aria-owns={open ? 'mouse-over-popover' : undefined}
               aria-haspopup="true"
