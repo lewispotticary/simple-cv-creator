@@ -69,8 +69,8 @@ function displayMode({displayMode, setDisplayMode}) {
       }
       
   return (
-    <div style={{backgroundColor: String(displayMode.backgroundColor), color: displayMode.fontColour}} className={styles.displayModeContainer}>
-        <FormControlLabel control={<Switch defaultChecked color="default"/>} onChange={displayModeHandler} label={displayMode.mode}/>
+    <div style={{color: "#" + displayMode.fontColour, backgroundColor: "#" + displayMode.backgroundColour}} className={styles.displayModeContainer}>
+        <FormControlLabel control={<Switch/>} onChange={displayModeHandler} label={displayMode.mode}/>
     </div>
   )
 }
