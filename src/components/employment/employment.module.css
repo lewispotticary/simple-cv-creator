@@ -1,9 +1,36 @@
 .employmentContainer{
     position: absolute;  
-    top: 200%;
+    top: 275%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 50%;
     height: 600px,
+}
+
+.inputContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.textFieldContainer{
+    border: 1px solid white;
+    width: 100%;
+}
+
+.inputNavigationContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.icon{
+    transform: scaleX(-1)
 }
